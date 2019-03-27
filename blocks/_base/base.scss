@@ -1,0 +1,73 @@
+body{
+  color: rgba(#000000, 0.7);
+  font-family: 'Rubik', sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+* {
+	-webkit-font-smoothing: antialiased;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-text-size-adjust: 100%;
+	box-sizing: border-box;
+	outline: none !important;
+}
+
+@mixin clearfix(){
+	&:before, &:after{
+		display: table;
+		content: " ";
+	}
+	&:after{
+		clear: both;
+	}
+}
+@mixin sectionDesktop() {
+	@media (max-width: 1279px) {
+		min-width: 1100px;
+		margin: 0 auto;
+	}
+}
+@mixin container($paddingSide:false) {
+  width: 1280px;
+  margin: 0 auto;
+  @if $paddingSide {
+		padding: 0 #{$paddingSide+'px'};
+	} @else {
+		padding: 0 90px;
+	}
+	@media (max-width: 1279px) {
+		width: 1100px;
+		margin: 0 auto;
+		padding: 0;
+	}
+	// @media #{$md}{
+	// 	width: 100%;
+	// 	padding: 0 16px;
+	// }
+	// @media #{$sm}{
+	// 	width: 100%;
+	// 	padding: 0 64px;
+	// }
+	// @media #{$xs} {
+	// 	width: 100%;
+	// 	padding: 0 16px;
+	// }
+}
+
+textarea {
+	resize: vertical !important;
+}
+
+button {
+	border: 0;
+	background-color: transparent;
+	padding: 0;
+	margin: 0;
+	-webkit-appearance: none;
+}
+
+input, textarea, select, button {
+	font-family: 'Rubik', sans-serif !important;
+}

@@ -1,0 +1,25 @@
+include _assets/bemto/bemto
+- set_bemto_settings({ modifier: "--" })
+
+include head/head
+include header/header
+
+
+doctype html 
+html(lang="eg")
+
+	block head
+		head
+			+head({
+				"title": "html-boilerplate"
+			})
+
+		+b.BODY.body
+			block content
+
+			block scripts
+				script(src="/assets/js/libs-bundle.js?"+version)
+				-if (!prod)
+					script(src="/assets/js/main.js")
+				-else
+					script(src="/assets/js/main.min.js?"+version)
